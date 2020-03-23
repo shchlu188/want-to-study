@@ -182,3 +182,31 @@
         10、is null、is not null 无法使用索引
         
         
+####order by优化
+    支持两种方式： Filesort和Index
+    原则:
+        使用最左原则
+        使用where子句和order by子句条件列组合满足索引最左原则
+####慢查询日志:
+    查看慢日志是否开启
+        show variables like '%slow_query_log%';
+    开启:
+        set global slow_query_log=1;
+    永久生效:
+        修改my.cnf文件
+            [mysqlId]
+            slow_query_log=1
+            slow_query_log_file=日志存放位置
+    case:
+        查询当前多少算慢:
+            show variables like 'long_query_time%';
+            set global long_query_time=3;
+            
+         
+            show global status like '%slow_queries%'
+####日志分析工具:(mysqldumpslow)
+    help:
+        mysqldumpslow --help
+    s:
+####存储函数:
+    
