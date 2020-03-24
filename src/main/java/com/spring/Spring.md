@@ -17,7 +17,7 @@
         3、调用bean的初始化
         4、bean可以使用
         5、容器关闭时调用bean的销毁方法
-    加BeanPostProcessor
+    实现BeanPostProcessor接口
         1、通过构造器或工厂方法创建bean实例
         2、为bean的属性设置值和对其它bean的引用
         3、将bean的实例传递给BeanPostProcessor的postProcessBeforeInitialization方法
@@ -25,6 +25,15 @@
         5、将bean的实例传递给BeanPostProcessor的postProcessAfterInitialization方法
         6、bean可以使用
         7、容器关闭时调用bean的销毁方法
+    实现各种Aware和BeanPostProcessor接口:
+        1、同构构造器或者工厂方法创建bean实例
+        2、为bean的属性设置值和对其它bean的引用
+        3、执行一系列实现Aware接口的方法
+        4、执行BeanPostProcessor的postProcessBeforeInitialzation方法
+        5、调用bean的初始化方法
+        6、将bean的实例传递给BeanPostProcessor的postProcessAfterInitialization方法
+        7、bean创建完成
+        8、容器关闭时调用bean的销毁方法
 ####ByType和ByName的选用：
     byType:
         通过spring容器中bean的类型，为兼容性的属性赋值；
