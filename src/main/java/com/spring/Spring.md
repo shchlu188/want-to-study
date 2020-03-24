@@ -1,4 +1,4 @@
-##Spring的学习:
+###Spring的学习:
 ####配置bean：
     形式：
         基于xml和基于注解
@@ -555,3 +555,22 @@
     
     Spring里面最大的模式就是工厂模式
         
+####@Transactional注解
+    	@AliasFor("transactionManager")
+    	String value() default "";
+    	@AliasFor("value")
+    	String transactionManager() default "";
+    	// 事务传播行为
+    	Propagation propagation() default Propagation.REQUIRED;
+    	// 事务隔离级别
+    	Isolation isolation() default Isolation.DEFAULT;
+    	// 超时，事务超出指定执行时长后自动中止并回滚
+    	int timeout() default TransactionDefinition.TIMEOUT_DEFAULT;
+    	// 设置事务为只读事务
+    	boolean readOnly() default false;
+    	// 哪些异常事务可以回滚
+    	Class<? extends Throwable>[] rollbackFor() default {};
+    	String[] rollbackForClassName() default {};
+    	// 哪些异常事务可以不回滚
+    	Class<? extends Throwable>[] noRollbackFor() default {};
+    	String[] noRollbackForClassName() default {};:
